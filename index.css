@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  --color-smk-bg: #F7F5F0;
+  --color-smk-navbar: #111111;
+  --color-smk-footer: #151515;
+  --color-smk-primary: #111111;
+  --color-smk-primary-hover: #2B2B2B;
+  --color-smk-accent: #C8A96B;
+  --color-smk-card: #FFFFFF;
+  --color-smk-border: #E5E0D8;
+  --color-smk-heading: #111111;
+  --color-smk-body: #4A4A4A;
+  --color-smk-muted: #777777;
+  --color-smk-price: #111111;
+  --color-smk-sale: #9B2C2C;
+  --color-smk-footer-text: #D9D4CA;
+  --color-smk-navbar-text: #FFFFFF;
+}
+
+:root {
+  --smk-bg: #F7F5F0;
+  --smk-navbar: #111111;
+  --smk-footer: #151515;
+  --smk-primary: #111111;
+  --smk-primary-hover: #2B2B2B;
+  --smk-accent: #C8A96B;
+  --smk-card: #FFFFFF;
+  --smk-border: #E5E0D8;
+  --smk-heading: #111111;
+  --smk-body: #4A4A4A;
+  --smk-muted: #777777;
+  --smk-price: #111111;
+  --smk-sale: #9B2C2C;
+  --smk-footer-text: #D9D4CA;
+  --smk-navbar-text: #FFFFFF;
+}
+
+html, body {
+  background-color: #F7F5F0;
+  color: #4A4A4A;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar styling in palette */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5E0D8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C8A96B;
+}
+
+/* Mobile-first usability improvements for phones and small tablets */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { min-width: 320px; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; }
+button, input, select, textarea { font: inherit; }
+button, [role="button"] { touch-action: manipulation; }
+input, select, textarea { max-width: 100%; }
+
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+  #root { width: 100%; overflow-x: clip; }
+  /* Keep all content inside the viewport and avoid tiny tap targets. */
+  button, [role="button"] { min-height: 40px; }
+  input, select, textarea { min-height: 42px; font-size: 16px !important; }
+  img { height: auto; }
+  table { min-width: 600px; }
+  .overflow-x-auto { -webkit-overflow-scrolling: touch; }
+  /* Modals use the available phone height and remain scrollable. */
+  .fixed.inset-0.z-50 { align-items: flex-start !important; padding: 10px !important; overflow-y: auto !important; }
+  .fixed.inset-0.z-50 > div { max-height: calc(100dvh - 20px); overflow-y: auto; margin-top: auto; margin-bottom: auto; }
+  /* Prevent fixed-width content and grids from overflowing narrow screens. */
+  .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl, .max-w-xl { max-width: 100%; }
+  .grid.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid.grid-cols-3, .grid.grid-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .flex.items-center.justify-between { gap: 10px; }
+  /* Form controls and action buttons wrap instead of being clipped. */
+  form .flex, .space-y-4 > .flex { flex-wrap: wrap; }
+  .truncate { min-width: 0; }
+  /* Admin panel spacing tuned for one-hand phone use. */
+  main.flex-1 { min-width: 0; padding: 0 !important; }
+  main.flex-1 h1 { font-size: 1.35rem; line-height: 1.35; }
+  main.flex-1 h2 { line-height: 1.35; }
+  .rounded-2xl { border-radius: 16px; }
+}
+
+@media (max-width: 640px) {
+  body { background: #fff; }
+  .smk-mobile-section { padding-left: 12px; padding-right: 12px; }
+  main .space-y-8, main .space-y-12 { gap: 20px; }
+  main .max-w-7xl { padding-left: 12px !important; padding-right: 12px !important; }
+  main .max-w-7xl > .grid { gap: 1px !important; }
+  /* Product image proportions match the reference mobile fashion grid. */
+  .smk-mobile-product-grid .group { border-radius: 0 !important; }
+  .smk-mobile-product-grid .aspect-\[0\.66\] { aspect-ratio: 0.66 / 1; }
+  main section > .grid { gap: 1px !important; }
+  main section { margin-top: 18px; }
+  footer { margin-bottom: 58px !important; }
+  .sticky { box-shadow: 0 1px 5px rgba(0,0,0,.06); }
+}
+
+@media (max-width: 380px) {
+  main.flex-1 { padding: 9px !important; }
+  .grid.grid-cols-3, .grid.grid-cols-4 { grid-template-columns: minmax(0, 1fr); }
+  button { padding-left: 10px; padding-right: 10px; }
+}
+
+/* Shree Maruti-style home page mobile reference */
+.smk-premium-hero { width: 100%; overflow: hidden; }
+.smk-premium-hero button { padding: 0; border: 0; min-height: 0; }
+.smk-premium-hero img { display: block; width: 100%; height: auto; }
+.smk-mobile-collection { display: none; }
+@media (max-width: 640px) {
+  .smk-mobile-collection { display: block; }
+  .smk-mobile-hide-trust { display: none; }
+  .smk-mobile-product-grid { gap: 1px !important; }
+  .smk-mobile-product-grid .aspect-\[0\.66\] { aspect-ratio: 0.66 / 1; }
+  .smk-mobile-product-grid .group { border-radius: 0 !important; }
+  .smk-mobile-product-grid .group > div:first-child { border-radius: 0 !important; }
+  .smk-mobile-product-grid .group > div:last-child { padding: 10px 9px 12px !important; }
+  .smk-mobile-product-grid .group h2 { font-size: 16px !important; line-height: 1.28 !important; }
+  .smk-mobile-product-grid .group .text-lg { font-size: 16px !important; }
+}
