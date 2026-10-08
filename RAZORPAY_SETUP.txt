@@ -1,0 +1,13 @@
+RAZORPAY SETUP — SHREE MARUTI
+
+1. Create/activate your Razorpay account and enable Payment Gateway.
+2. From Razorpay Dashboard, create API Keys.
+3. Add these environment variables in Netlify (or your server):
+   RAZORPAY_KEY_ID=rzp_live_xxxxxxxxxx
+   RAZORPAY_KEY_SECRET=xxxxxxxxxxxxxxxx
+4. Redeploy the site.
+
+IMPORTANT:
+- Never put RAZORPAY_KEY_SECRET in frontend code.
+- The website creates Razorpay orders on the server and verifies the Razorpay signature before marking an order PAID.
+- Test first with Razorpay test keys (rzp_test_...) before switching to live keys.

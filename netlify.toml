@@ -1,0 +1,42 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  force = true
+  from = "/api/shiprocket/*"
+  to = "/.netlify/functions/api-shiprocket/:splat"
+  status = 200
+
+[[redirects]]
+  force = true
+  from = "/api/products/*"
+  to = "/.netlify/functions/api-products/:splat"
+  status = 200
+
+[[redirects]]
+  force = true
+  from = "/api/products"
+  to = "/.netlify/functions/api-products"
+  status = 200
+
+[[redirects]]
+  force = true
+  from = "/api/upload"
+  to = "/.netlify/functions/api-upload"
+  status = 200
+
+[[redirects]]
+  force = true
+  from = "/api/uploads/*"
+  to = "/.netlify/functions/api-uploads/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

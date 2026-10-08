@@ -1,0 +1,9 @@
+NETLIFY DEPLOYMENT
+1. Upload/deploy this whole project to the same Netlify site.
+2. Build command: npm run build
+3. Publish directory: dist
+4. Functions directory: netlify/functions
+5. After deployment, test /api/products in the browser. It should return JSON with success:true.
+6. Then add/edit a product and refresh.
+
+This version uses Netlify Blobs site-wide stores for persistent product and image data. Netlify Functions automatically receive access to the site's Blobs store.
